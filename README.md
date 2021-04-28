@@ -1,0 +1,2 @@
+# pokedex-brk
+Pokedex ramdon
