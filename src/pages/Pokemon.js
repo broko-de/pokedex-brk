@@ -1,15 +1,21 @@
-const Pokemon = () => {
+import getHash from '../utils/getHash';
+import {getData, getDataCharacteristic} from '../utils/getData';
+
+const Pokemon = async () => {
+    const id = getHash();
+    const pokemon = await getData(id);
+    const characteristic = await getDataCharacteristic(id);
     const view = `
-        <div class="Pokemon-inner">
-            <articule class="Pokemon-card">
-                <img src="image.png" alt="pokemon">
-                <h2>Pokemon</h2>
+        <div class="Pokemons-inner">
+            <articule class="Pokemons-card">
+                <img src="${pokemon.sprites.front_default}" alt="pokemon">
+                <h2>${pokemon.name}</h2>
             </articule>
-            <articule class="Pokemon-card">
-                <h3>Tipo:</h3>
-                <h3>Altura:</h3>
-                <h3>Peso:</h3>
-                <h3>Descripcion:</h3>
+            <articule class="Pokemons-card">
+                <h3>Tipo: <span>${pokemon.types.map(type => `${type.type.name} `).join('')}</span></h3>
+                <h3>Altura: <span>${pokemon.height} feet</span></h3>
+                <h3>Peso: <span>${pokemon.weight} Kg</span></h3>
+                <h3>Descripcion: <span>${characteristic.descriptions[1].description}</span></h3>
             </articule>
         </div>
     `

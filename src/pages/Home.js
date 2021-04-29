@@ -1,12 +1,18 @@
-const Home = () => {
+import {getData} from '../utils/getData';
+
+
+const Home = async () => {
+    const pokemons = await getData();
     const view = `
-        <div class="pokemons">
-            <articule class="pokemon-item">
-                <a href="#/1">
-                    <img src="image.png" alt="image">
-                    <h2>Pokemon bonito</h2>
-                </a>
-            </articule>
+        <div class="Pokemons">
+            ${pokemons.map(pokemon => `
+                <articule class="Pokemons-item">
+                    <a href="#/${pokemon.id}">
+                        <img src="${pokemon.sprites.front_default}" alt="image">
+                        <h2>${pokemon.name}</h2>
+                    </a>
+                </articule>
+            `).join('')}
         </div>
     `;
     return view;
