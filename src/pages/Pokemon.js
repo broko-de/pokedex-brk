@@ -8,7 +8,7 @@ const Pokemon = async () => {
     const view = `
         <div class="Pokemons-inner">
             <articule class="Pokemons-card">
-                <img src="${pokemon.sprites.front_default}" alt="pokemon">
+                <img src="${pokemon.sprites.other.dream_world.front_default}" alt="pokemon">
                 <h2>${pokemon.name}</h2>
             </articule>
             <articule class="Pokemons-card">
@@ -17,6 +17,12 @@ const Pokemon = async () => {
                 <h3>Peso: <span>${pokemon.weight} Kg</span></h3>
                 <h3>Descripcion: <span>${characteristic.descriptions[1].description}</span></h3>
             </articule>
+        </div>
+        <div class="botones">
+            <div class="circulo"></div>
+            <div class="rectangulo"></div>
+            <div class="rectangulo-2"></div>
+
         </div>
     `
     return view;

@@ -1,10 +1,12 @@
+import logo from '../assets/images/pokedex.png';
+
 const Header = () => {
     const view = `
         <div class="Header-main">
             <div class="Header-logo">
                 <h1>
                     <a href="/">
-                        pokedex-brk.com
+                        <img src="${logo}" alt="pokedex-brk">
                     </a>
                 </h1>
             </div>

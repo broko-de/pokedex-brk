@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+/* AGREGAMOS NUESTRAS FUENTES */
+@font-face{
+	font-family: 'PressStart2P';
+  font-style: normal;
+  font-weight: normal;
+	src: url('../assets/fonts/PressStart2P-Regular.woff') format('woff');
+}
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #dd1e2f;
   color: #3c484e;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'PressStart2P', sans-serif;
 }
 
 .Header-main {
@@ -27,14 +33,14 @@ body {
 }
 
 .Pokemons {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 1.5rem;
   grid-row-gap: 1.5em;
   display: grid;
 }
 
 .Pokemons-inner {
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
   grid-gap: 1.5rem;
   grid-row-gap: 1.5em;
   display: grid;
@@ -48,17 +54,25 @@ body {
   display: block;
   animation-duration: 2s;
   animation-name: fade;
+  border: 10px solid #b0b0b0;
+  background-color: #FFF;
+
 }
 
 .Pokemons-card img {
   height: auto;
   border-radius: 5px 5px 0 0;
+  padding-left: 8%;
+  padding-top: 5%;
+  width: 80%;
+  margin: auto;
 }
 
 .Pokemons-card h2 {
   font-size: 18px;
   font-weight: 400;
   text-align: center;
+  color:#000;
 }
 
 .Pokemons-card h3 {
@@ -66,16 +80,21 @@ body {
   font-weight: 400;
   text-align: left;
   margin: 20px;
+  color:#000;
+
 }
 
 .Pokemons-item {
   text-decoration: none;
-  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+  border: 10px solid #b0b0b0;
   border-radius: 5px;
   margin: 0 0 20px 0;
-  display: block;
   animation-duration: 2s;
   animation-name: fade;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Pokemons-item img {
@@ -90,6 +109,7 @@ body {
   padding: 5px 10px;
   display: flex;
   justify-content: space-between;
+  color: #000;
 }
 
 .Pokemons-item a {
@@ -118,4 +138,38 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.circulo {
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #33fbfa;
+}
+
+.rectangulo {
+  margin-top: 20px;
+  width: 250px; 
+  height: 50px; 
+  border: 3px solid #082b01;
+  background: #2ff90a;
+  border-radius: 20px;
+}
+
+.rectangulo-2 {
+  margin-top: 20px;
+  width: 250px; 
+  height: 50px; 
+  border: 3px solid #082b01;
+  background: #fbcb03;
+  border-radius: 20px;
+}
+
+.botones {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+  grid-row-gap: 1.5em;
+  display: grid;
 }
